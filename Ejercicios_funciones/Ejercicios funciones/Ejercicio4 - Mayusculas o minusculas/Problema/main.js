@@ -1,23 +1,26 @@
 // Escribe aquí tu codigo Javascript
 
 alert("MAYUSCULAS O MINUSCULAS");
-function palindromo(frase){
-	var letras=((((frase.toLowerCase()).split(" ")).join("")).split(""));
-	console.log(letras);
-	var i=0;
-	var suma=0;
-	for (var i = 0; i <=letras.length; i++) {
-		if (letras[i]===letras[(letras.length - 1)]) {
-			suma+=1;
+function diferenciador(frase){
+	var letras=(((frase.split(" ")).join("")).split(""));
+	var min=((((frase.toLowerCase()).split(" ")).join("")).split(""));
+	var n_min, n_may;
+	n_min=0;
+	n_may=0;
+	for (var i = 0; i < letras.length; i++) {
+		if (letras[i]===min[i]) {
+			n_min+=1;
 		}else{
-			suma=0;
+			n_may+=1;
 		}
 	}
-	if (suma===letras.length - 2) {
-		alert("El texto ingresado es PALINDROMO");
+	if (n_min===0) {
+		alert("El texto está escrito en MAYÚSCULAS");
+	}else if (n_may===0) {
+		alert("El texto está escrito en minúsculas");
 	}else{
-		alert("el texto ingresado no es PALINDROMO");
+		alert("El texto tiene palabras escritas en MAYÚSCULAS y también en minúsculas");
 	}
 }
-var frase=prompt("Ingresa un texto PALINDROMO para validarla");
-palindromo(frase);
+var frase=prompt("Ingresa un texto para validarlo. No use comas por favor.");
+diferenciador(frase);
