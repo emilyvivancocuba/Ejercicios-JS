@@ -3,7 +3,7 @@ function factura(){
 		"empresa": ["Nombre", "Direccion", "Telefono", "NIF"],
 		"cliente": ["Nombre", "Direccion", "Telefono", "NIF"],
 		"elementos":["Descripcion", "Precio", "Cantidad"],
-		"info_basica":["Importe_total", "Tipo_iva", "Forma_de_pago"]
+		"info_basica":["Tipo_iva", "Forma_de_pago"]
 	};
 	var emp=[];
 	var cli=[];
@@ -30,7 +30,7 @@ function factura(){
 		document.write("<br>"+factura.info_basica[l]+" : "+info[l]);
 	}
 	document.write("<br>=====================================");
-	var total=(ele[1])*(ele[2])*(info[1]);
+	var total=((ele[1])*(ele[2])*(info[0])).toFixed(3);
 	document.write("<br>El Importe total del contribuyente es de: "+total);
 }
 factura();
